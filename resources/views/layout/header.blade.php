@@ -39,17 +39,38 @@
                                 @endif
                                     <a class="nav-link" href="about">Nosotros</a>
                                 </li>
+
+                                @if($template=='layout.template-computer')
+                                <li class="nav-item active">
+                                @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about">Computadoras</a>
+                                @endif
+
+                                    <a class="nav-link" href="computer">Computadoras</a>
                                 </li>
+                                
+                                @if($template=='layout.template-laptop')
+                                <li class="nav-item active">
+                                @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="laptop.html">Laptops</a>
+                                @endif
+                                    <a class="nav-link" href="laptop">Laptops</a>
                                 </li>
+                               
+                                @if($template=='layout.template-product')
+                                <li class="nav-item active">
+                                @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="product.html">Productos</a>
+                                @endif
+                                    <a class="nav-link" href="product">Productos</a>
                                 </li>
+                                
+                                @if($template=='layout.template-contact')
+                                <li class="nav-item active">
+                                @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contactanos</a>
+                                @endif
+                                    <a class="nav-link" href="contact">Contactanos</a>
                                 </li>
                             </ul>
                         </div>

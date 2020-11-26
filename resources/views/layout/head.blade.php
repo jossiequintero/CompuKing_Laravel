@@ -11,6 +11,14 @@
         CompuKing | Home
         @elseif ($template=='layout.template-about')
         Sobre Nosotros
+        @elseif ($template=='layout.template-computer')
+        Computadoras
+        @elseif ($template=='layout.template-laptop')
+        Laptop
+        @elseif ($template=='layout.template-product')
+        Productos 
+        @elseif ($template=='layout.template-contact')
+        Contactanos 
         @endif
 
     </title>
