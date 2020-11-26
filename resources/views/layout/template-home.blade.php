@@ -14,7 +14,8 @@
                    <div class="row">
                       <div class="col-md-6">
                          <div class="text-bg">
-                            <span>Computadoras</span>
+                            <span>{{$promo->titulo}}</span>
+                            
                             <h1>20% Desc.</h1>
                             <p>Todas nuestras computadoras, por esta semana dentran un 20% de descuento. No te lo pierdas! Solo por tiempo limitado.</p>
                             <a href="https://www.whatsapp.com/business/api/?lang=es">Comprar </a> <a href="contact.html">Contactanos </a>

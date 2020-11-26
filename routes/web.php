@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('/home', [WebController::class, 'obtenerPromo']);
 
-    $template = "layout.template-home";
-    return \View::make('layout.master')
-        ->with('template', $template);
-});
 Route::get('/about', function () {
     $template = 'layout.template-about';
     return \View::make('layout.master')
