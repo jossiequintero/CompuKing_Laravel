@@ -45,3 +45,7 @@ Route::get('/contact', function () {
     return \View::make('layout.master')
         ->with('template', $template);
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
