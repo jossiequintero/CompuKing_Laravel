@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/home', function () {
 
@@ -25,11 +28,11 @@ Route::get('/about', function () {
     return \View::make('layout.master')
         ->with('template', $template);
 });
-Route::get('/computer', function () {
-    $template = 'layout.template-computer';
-    return \View::make('layout.master')
-        ->with('template', $template);
-});
+// Route::get('/computer', function () {
+//     $template = 'layout.template-computer';
+//     return \View::make('layout.master')
+//         ->with('template', $template);
+// });
 Route::get('/laptop', function () {
     $template = 'layout.template-laptop';
     return \View::make('layout.master')
@@ -49,3 +52,11 @@ Route::get('/contact', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/computer', function () {
+        $template = 'layout.template-computer';
+        return \View::make('layout.master')
+            ->with('template', $template);
+    });
+});
