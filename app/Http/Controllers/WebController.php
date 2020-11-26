@@ -20,4 +20,12 @@ class WebController extends Controller
             ->with('promo', $result)
             ->with('template', $template);
     }
+
+    public function obtenerPromociones()
+    {
+        // $template = 'welcome';
+        $result = $this->_locals->getPromociones();
+        return view('welcome')
+            ->with('promos', $result);
+    }
 }

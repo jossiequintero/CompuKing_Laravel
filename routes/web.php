@@ -14,22 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+
+// });
+
+Route::get('/', [WebController::class, 'obtenerPromociones']);
+
 
 Route::get('/home', [WebController::class, 'obtenerPromo']);
+
 
 Route::get('/about', function () {
     $template = 'layout.template-about';
     return \View::make('layout.master')
         ->with('template', $template);
 });
-// Route::get('/computer', function () {
-//     $template = 'layout.template-computer';
-//     return \View::make('layout.master')
-//         ->with('template', $template);
-// });
+
+
+
+Route::get('/computer', function () {
+    $template = 'layout.template-computer';
+    return \View::make('layout.master')
+        ->with('template', $template);
+});
 Route::get('/laptop', function () {
     $template = 'layout.template-laptop';
     return \View::make('layout.master')
@@ -51,9 +59,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/computer', function () {
-        $template = 'layout.template-computer';
-        return \View::make('layout.master')
-            ->with('template', $template);
+    Route::get('/Admin', function () {
+
+        return \View::make('administracion.master');
     });
 });
