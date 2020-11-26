@@ -17,4 +17,13 @@ class Locals
         $retorno = DB::table('carrosel_home')->get();
         return $retorno;
     }
+    public function postPromoAdm($data)
+    {
+        \DB::table('carrosel_home')
+            ->update([
+                'titulo' => $data->titulo,
+                'promocion' => $data->promocion,
+                'descripcion' => $data->descripcion,
+            ]);
+    }
 }

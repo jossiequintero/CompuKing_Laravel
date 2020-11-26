@@ -427,32 +427,7 @@
                     </g>
                 </svg>
             </div>
-            <div style="color: #cbd5e0">
-                <table>
-                    <thead>
-                        <tr>
-                            <td>
-                                Titulo
-                            </td>
-                            <td>
-                                promo
-                            </td>
-                            <td>
-                                descr
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($promos as $value)
-                        <tr>
-                            <td>{{$value->titulo}}</td>
-                            <td>{{$value->promocion}}</td>
-                            <td>{{$value->descripcion}}</td>
-                            @endforeach
-                    </tbody>
-
-                </table>
-            </div>
+ 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">

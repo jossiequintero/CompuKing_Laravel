@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// });
-
-Route::get('/', [WebController::class, 'obtenerPromociones']);
+// Route::get('/', [WebController::class, 'obtenerPromociones']);
 
 
 Route::get('/home', [WebController::class, 'obtenerPromo']);
@@ -59,8 +58,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Admin', function () {
 
-        return \View::make('administracion.master');
-    });
+    Route::get('/Admin', [WebController::class, 'obtenerPromociones']);
 });
+
+Route::post('promoGuardar', [WebController::class, 'GuardarPromoAdm']);
