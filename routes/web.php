@@ -59,7 +59,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    Route::get('/Admin', [WebController::class, 'obtenerPromociones']);
+    Route::get('/cms-admin', [WebController::class, 'obtenerPromociones']);
 });
 
 Route::post('promoGuardar', [WebController::class, 'GuardarPromoAdm']);
